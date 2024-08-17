@@ -1,0 +1,46 @@
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #1a1a1a;
+            perspective: 1000px;
+        }
+
+        .cube {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotateCube 8s infinite linear;
+         
+        }
+        
+
+        .cube div {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border: 1px solid #000;
+            box-sizing: border-box;
+            background-repeat: no-repeat;
+        }
+
+        .front  { transform: translateZ(100px); background-image: url('https://img.freepik.com/free-photo/abstract-autumn-beauty-multi-colored-leaf-vein-pattern-generated-by-ai_188544-9871.jpg'); }
+        .back   { transform: rotateY(180deg) translateZ(100px); background-image: url('https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg'); }
+        .right  { transform: rotateY(90deg) translateZ(100px); background-image: url('https://img.freepik.com/free-photo/colorful-design-with-spiral-design_188544-9588.jpg'); }
+        .left   { transform: rotateY(-90deg) translateZ(100px); background-image: url('https://fps.cdnpk.net/images/home/subhome-ai.webp?w=649&h=649'); }
+        .top    { transform: rotateX(90deg) rotateZ(-90deg) translateZ(100px); background-image: url('https://static.vecteezy.com/system/resources/thumbnails/024/655/655/small_2x/a-vibrant-leaf-design-celebrating-nature-beauty-generated-by-ai-free-photo.jpg'); }
+        .bottom { transform: rotateX(-90deg) rotateZ(-90deg)  translateZ(100px); background-image: url('https://images.playground.com/bbb33144615747df8171f038f87c3e63.jpeg'); }
+
+        @keyframes rotateCube {
+            0% {
+                transform: rotateX(0) rotateY(0);
+            }
+            100% {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
